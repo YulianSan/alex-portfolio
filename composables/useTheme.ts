@@ -1,1 +1,1 @@
-export const useTheme = () => useState<boolean>('theme', () => true)
+export const useTheme = () => useState<boolean>('theme', () => false)

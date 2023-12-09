@@ -1,1 +1,1 @@
-export const useMenu = () => useState<boolean>('menu', () => true)
+export const useMenu = () => useState<boolean>('menu', () => false)
