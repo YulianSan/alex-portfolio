@@ -1,3 +1,3 @@
 <template>
-	<span>Home page</span>
+	<AtomCard>Home page</AtomCard>
 </template>
