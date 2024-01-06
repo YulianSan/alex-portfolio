@@ -7,7 +7,7 @@ defineProps<PropsLinkIcon>()
 <template>
   <div class="w-full flex items-center gap-x-8 p-4 hover:bg-zinc-200 
     dark:hover:bg-zinc-800 rounded-lg">
-    <Icon :name="$props.icon" class="text-black flex-none w-6 text-2xl dark:text-white"/>
+    <AtomIcon :icon="$props.icon" />
     <div class="flex-auto break-keep whitespace-nowrap">
       <slot />
     </div>
