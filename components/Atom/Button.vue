@@ -3,7 +3,7 @@ defineEmits(['click'])
 </script>
 <template>
   <button
-    :click="$emit('click')"
+    @click="$emit('click')"
     class="bg-sky-600 text-white px-6 py-2 rounded"
   >
     <slot />

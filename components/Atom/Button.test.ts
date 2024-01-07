@@ -27,7 +27,9 @@ describe('Button', () => {
     })
 
     await fireEvent.click(screen.getByRole('button'))
-
+    expect(emitted().click.length).toBe(1)
     expect(emitted()).toHaveProperty('click')
+    await fireEvent.click(screen.getByRole('button'))
+    expect(emitted().click.length).toBe(2)
   })
 })
