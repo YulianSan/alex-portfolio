@@ -50,20 +50,22 @@ const menuIsOpen = useMenu()
 			</nav>
 		</template>
 		<template #bottom-header>
-			<label >
-				<MoleculeBlockHeader icon="heroicons-solid:sun">
-					<div class="flex w-full justify-between flex-1">
-						<span>Modo Claro</span>
-						<AtomSwitch v-model="lightTheme" />
-					</div>
-				</MoleculeBlockHeader>
-			</label>
-			<label class="sm:block hidden">
-				<MoleculeBlockHeader icon="icomoon-free:menu">
-					Menu
-					<input type="checkbox" v-model="menuIsOpen" class="hidden">
-				</MoleculeBlockHeader>
-			</label>
+			<div class="flex flex-col gap-y-2">
+				<label>
+					<MoleculeBlockHeader icon="heroicons-solid:sun">
+						<div class="flex w-full justify-between flex-1">
+							<span>Modo Claro</span>
+							<AtomSwitch v-model="lightTheme" />
+						</div>
+					</MoleculeBlockHeader>
+				</label>
+				<label class="sm:block hidden">
+					<MoleculeBlockHeader icon="icomoon-free:menu">
+						Menu
+						<input type="checkbox" v-model="menuIsOpen" class="hidden">
+					</MoleculeBlockHeader>
+				</label>
+			</div>
 		</template>
 	</OrganismHeader>
 </template>
