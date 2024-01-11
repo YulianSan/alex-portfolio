@@ -18,4 +18,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-vitest',
   ],
+  vite: {
+    vue: {
+      script: {
+        defineModel: true,
+        propsDestructure: true
+      }
+    }
+  }
 })
