@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { twMerge } from 'tailwind-merge'
 import { computed } from 'vue';
+import { Icon } from '#components'
+
 interface PropsIcon {
   icon: string
   class?: string
