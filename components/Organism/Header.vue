@@ -3,7 +3,7 @@ const menuIsOpen = useMenu()
 </script>
 
 <template>
-	<MoleculeHamburger />
+	<MoleculeHamburger v-model="menuIsOpen" />
 	<slot name="before-header" />
 	<header class="w-full transition-all h-screen dark:bg-zinc-950 py-8 bg-zinc-100 
 		p-4 flex flex-col overflow-x-hidden border-r border-zinc-300 dark:border-zinc-700
