@@ -5,7 +5,11 @@ import Switch from './Switch.vue'
 
 describe('Switch', () => {
   it('should renders', () => {
-    render(Switch)
+    render(Switch, {
+      props: {
+        modelValue: false
+      }
+    })
 
     expect(screen.getByRole('switch')).toBeInTheDocument()
   })
