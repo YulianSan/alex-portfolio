@@ -4,7 +4,12 @@ const menuIsOpen = useMenu()
 </script>
 
 <template>
-	<OrganismHeader>
+	<MoleculeHamburger v-model="menuIsOpen" />
+	<OrganismHeader :class="[
+		{ 'sm:max-w-xs': menuIsOpen }, 
+		{ 'translate-x-0': menuIsOpen }, 
+		{ 'sm:max-w-[5.5rem]': !menuIsOpen },
+	]">
 		<template #top-header>
 			<MoleculeBlockHeader icon="icon-park-outline:eagle">
 				<div class="py-2">
