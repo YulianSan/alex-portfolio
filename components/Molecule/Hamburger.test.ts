@@ -1,9 +1,7 @@
-import { vi, describe, it, expect } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/vue'
 // @ts-ignore
 import Hamburger from './Hamburger.vue'
-
-vi.mock('../../composables/useMenu')
 
 describe('Hamburger', () => {
 	it('should render', () => {
@@ -11,6 +9,11 @@ describe('Hamburger', () => {
 			props: {
 				modelValue: false
 			},
+			global: {
+				stubs: {
+					Icon: { template: '<div></div>' },
+				}
+			}
 		})
 
 		expect(screen.getByRole('button')).toBeInTheDocument()
@@ -21,6 +24,11 @@ describe('Hamburger', () => {
 			props: {
 				modelValue: false
 			},
+			global: {
+				stubs: {
+					Icon: { template: '<div></div>' },
+				}
+			}
 		})
 
 		const button = screen.getByRole('button')
