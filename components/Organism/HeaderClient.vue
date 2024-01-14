@@ -1,14 +1,17 @@
 <script setup lang="ts">
-const lightTheme = useTheme()
-const menuIsOpen = useMenu()
+import { useMenuStore } from '@/stores/useMenuStore' 
+import { useThemeStore } from '@/stores/useThemeStore' 
+
+const themeStore = useThemeStore()
+const menuStore = useMenuStore()
 </script>
 
 <template>
-	<MoleculeHamburger v-model="menuIsOpen" />
+	<MoleculeHamburger v-model="menuStore.state" />
 	<OrganismHeader :class="[
-		{ 'sm:max-w-xs': menuIsOpen }, 
-		{ 'translate-x-0': menuIsOpen }, 
-		{ 'sm:max-w-[5.5rem]': !menuIsOpen },
+		{ 'sm:max-w-xs': menuStore.state }, 
+		{ 'translate-x-0': menuStore.state }, 
+		{ 'sm:max-w-[5.5rem]': !menuStore.state },
 	]">
 		<template #top-header>
 			<MoleculeBlockHeader icon="icon-park-outline:eagle">
@@ -60,14 +63,14 @@ const menuIsOpen = useMenu()
 					<MoleculeBlockHeader icon="heroicons-solid:sun">
 						<div class="flex w-full justify-between flex-1">
 							<span>Modo Claro</span>
-							<AtomSwitch v-model="lightTheme" />
+							<AtomSwitch v-model="themeStore.isLight" />
 						</div>
 					</MoleculeBlockHeader>
 				</label>
 				<label class="sm:block hidden">
 					<MoleculeBlockHeader icon="icomoon-free:menu">
 						Menu
-						<input type="checkbox" v-model="menuIsOpen" class="hidden">
+						<input type="checkbox" v-model="menuStore.state" class="hidden">
 					</MoleculeBlockHeader>
 				</label>
 			</div>
