@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import { useThemeStore } from '@/stores/useThemeStore' 
 
-const theme = useTheme()
+const themeStore = useThemeStore()
 
-onMounted(() => {
-  document.documentElement.classList.toggle('dark', !theme.value)
+onBeforeMount(() => {
+  document.documentElement.classList.toggle('dark', !themeStore.isLight)
 })
 
-watch(theme, () => {
-  document.documentElement.classList.toggle('dark', !theme.value)
+watch(() => themeStore.isLight, () => {
+  document.documentElement.classList.toggle('dark', !themeStore.isLight)
 })
 
 </script>
