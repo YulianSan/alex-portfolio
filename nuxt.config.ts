@@ -1,11 +1,6 @@
-import { resolve } from 'path'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  alias: {
-    '@': resolve(__dirname, '/')
-  },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
@@ -17,6 +12,8 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/image',
     'nuxt-vitest',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   vite: {
     vue: {
