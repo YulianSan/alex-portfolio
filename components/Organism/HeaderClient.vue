@@ -9,8 +9,7 @@ const menuStore = useMenuStore()
 <template>
 	<MoleculeHamburger v-model="menuStore.state" />
 	<OrganismHeader :class="[
-		{ 'sm:max-w-xs': menuStore.state }, 
-		{ 'translate-x-0': menuStore.state }, 
+		{ 'sm:max-w-xs translate-x-0': menuStore.state }, 
 		{ 'sm:max-w-[5.5rem]': !menuStore.state },
 	]">
 		<template #top-header>
