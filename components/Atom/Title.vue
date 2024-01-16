@@ -1,5 +1,5 @@
 <template>
-  <span class="dark:text-zinc-300 text-zinc-800 font-bold">
+  <span class="dark:text-zinc-100 text-zinc-900 font-bold">
     <slot/>
   </span>
 </template>
