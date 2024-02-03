@@ -3,9 +3,21 @@ import { ref } from 'vue';
 
 export type ModelValue = {
   name: string
-  size: number
+  size: string
   type: string
   src: string
+}
+
+const sizeBytesToHuman = (size: number) => {
+	let types = ['BT', 'KB', 'MB', 'GB']
+	let currentType = 0
+
+	while (size / 1000 > 1 && currentType < types.length - 1) {
+		size /= 1000
+		currentType++
+	}
+
+  return `${size.toFixed(2)} ${types[currentType]}`
 }
 
 const modelValue = defineModel<ModelValue[]>()
@@ -18,13 +30,18 @@ const onFileChange = (event: Event) => {
     handleFileChange(Array.from(target.files))
 }
 
+const allowMimeType = (type: string) => {
+  return type.match(/(\.png|\.jpg|\.jpeg|\.webp)$/)
+}
+
 const handleFileChange = (files: File[]) => {
-  const filesTreat = files?.map((file) => ({
+  const filesAllow = files.filter((file) => allowMimeType(file.name))
+  const filesTreat = filesAllow.map((file) => ({
     name: file.name,
-    size: file.size,
+    size: sizeBytesToHuman(file.size),
     type: file.type,
     src: URL.createObjectURL(file),
-  })) ?? []
+  }))
 
   modelValue.value = [
     ...(modelValue?.value ?? []),
