@@ -15,8 +15,7 @@ watch(files, () => {
 <template>
 	<AtomDropImage v-model="files"> 
 		<template #default="{ isHover }">
-			<div
-				class="w-64 h-64"
+			<div class="w-64 h-64"
 				:class="[
 					{ 'bg-red-300': isHover },
 					{ 'bg-blue-300': !isHover },
@@ -29,12 +28,11 @@ watch(files, () => {
 	<div class="max-w-xs">
 		<MoleculeImageDrop
 			@remove="removeImage"
-      v-for="(file, i) in files"
+			v-for="(file, i) in files"
 			:src="file.src"
 			:name="file.name"
 			:size="file.size"
-      :key="file.src + file.name"
-			:index="i"
-    />
+			:key="file.src + file.name"
+			:index="i" />
 	</div>
 </template>

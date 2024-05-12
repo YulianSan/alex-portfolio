@@ -8,49 +8,49 @@ const menuStore = useMenuStore()
 
 <template>
 	<MoleculeHamburger v-model="menuStore.state" />
-	<OrganismHeader :class="[
+	<OrganismMenu :class="[
 		{ 'sm:max-w-xs translate-x-0': menuStore.state }, 
 		{ 'sm:max-w-[5.5rem]': !menuStore.state },
 	]">
 		<template #top-header>
-			<MoleculeBlockHeader icon="icon-park-outline:eagle">
+			<MoleculeBlockMenu icon="icon-park-outline:eagle">
 				<div class="py-2">
 					<h1 class="font-bold text-xl">
 						Águia Vitrais
 					</h1>
 					<span>Alex Gui. A. Acero</span>
 				</div>
-			</MoleculeBlockHeader>
+			</MoleculeBlockMenu>
 		</template>
 		<template #default>
 			<nav>
 				<ul class="flex flex-col gap-y-2">
 					<li>
 						<AtomLink href="/">
-							<MoleculeBlockHeader icon="uil:home">
+							<MoleculeBlockMenu icon="uil:home">
 								Home
-							</MoleculeBlockHeader>
+							</MoleculeBlockMenu>
 						</AtomLink>
 					</li>
 					<li>
 						<AtomLink href="/about">
-							<MoleculeBlockHeader icon="ri:information-line">
+							<MoleculeBlockMenu icon="ri:information-line">
 								Sobre nós
-							</MoleculeBlockHeader>
+							</MoleculeBlockMenu>
 						</AtomLink>
 					</li>
 					<li>
 						<AtomLink href="/works">
-							<MoleculeBlockHeader icon="ri:pencil-ruler-2-line">
+							<MoleculeBlockMenu icon="ri:pencil-ruler-2-line">
 								Obras de Arte
-							</MoleculeBlockHeader>
+							</MoleculeBlockMenu>
 						</AtomLink>
 					</li>
 					<li>
 						<AtomLink href="/contact">
-							<MoleculeBlockHeader icon="ri:contacts-line">
+							<MoleculeBlockMenu icon="ri:contacts-line">
 								Contato
-							</MoleculeBlockHeader>
+							</MoleculeBlockMenu>
 						</AtomLink>
 					</li>
 				</ul>
@@ -59,20 +59,20 @@ const menuStore = useMenuStore()
 		<template #bottom-header>
 			<div class="flex flex-col gap-y-2">
 				<label>
-					<MoleculeBlockHeader icon="heroicons-solid:sun">
+					<MoleculeBlockMenu icon="heroicons-solid:sun">
 						<div class="flex w-full justify-between flex-1">
 							<span>Modo Claro</span>
 							<AtomSwitch v-model="themeStore.isLight" />
 						</div>
-					</MoleculeBlockHeader>
+					</MoleculeBlockMenu>
 				</label>
 				<label class="sm:block hidden">
-					<MoleculeBlockHeader icon="icomoon-free:menu">
+					<MoleculeBlockMenu icon="icomoon-free:menu">
 						Menu
 						<input type="checkbox" v-model="menuStore.state" class="hidden">
-					</MoleculeBlockHeader>
+					</MoleculeBlockMenu>
 				</label>
 			</div>
 		</template>
-	</OrganismHeader>
+	</OrganismMenu>
 </template>
