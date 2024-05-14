@@ -11,7 +11,7 @@ const menuStore = useMenuStore()
 		{ 'sm:max-w-xs translate-x-0': menuStore.state }, 
 		{ 'sm:max-w-[5.5rem]': !menuStore.state },
 	]">
-		<template #top-header>
+		<template #top-menu>
 			<MoleculeBlockMenu icon="icon-park-outline:eagle">
 				<div class="py-2">
 					<h1 class="font-bold text-xl">
@@ -55,7 +55,7 @@ const menuStore = useMenuStore()
 				</ul>
 			</nav>
 		</template>
-		<template #bottom-header>
+		<template #bottom-menu>
 			<div class="flex flex-col gap-y-2">
 				<label>
 					<OrganismBlockMenuTooltip icon="heroicons-solid:sun" label="Tema">
