@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useMenuStore } from '@/stores/useMenuStore' 
 import { useThemeStore } from '@/stores/useThemeStore' 
 
 const themeStore = useThemeStore()
@@ -27,30 +26,30 @@ const menuStore = useMenuStore()
 				<ul class="flex flex-col gap-y-2">
 					<li>
 						<AtomLink href="/">
-							<MoleculeBlockMenu icon="uil:home">
+							<OrganismBlockMenuTooltip icon="uil:home" label="Home">
 								Home
-							</MoleculeBlockMenu>
+							</OrganismBlockMenuTooltip>
 						</AtomLink>
 					</li>
 					<li>
 						<AtomLink href="/about">
-							<MoleculeBlockMenu icon="ri:information-line">
+							<OrganismBlockMenuTooltip icon="ri:information-line" label="Sobre">
 								Sobre nós
-							</MoleculeBlockMenu>
+							</OrganismBlockMenuTooltip>
 						</AtomLink>
 					</li>
 					<li>
 						<AtomLink href="/works">
-							<MoleculeBlockMenu icon="ri:pencil-ruler-2-line">
+							<OrganismBlockMenuTooltip icon="ri:pencil-ruler-2-line" label="Obras">
 								Obras de Arte
-							</MoleculeBlockMenu>
+							</OrganismBlockMenuTooltip>
 						</AtomLink>
 					</li>
 					<li>
 						<AtomLink href="/contact">
-							<MoleculeBlockMenu icon="ri:contacts-line">
+							<OrganismBlockMenuTooltip icon="ri:contacts-line" label="Contato">
 								Contato
-							</MoleculeBlockMenu>
+							</OrganismBlockMenuTooltip>
 						</AtomLink>
 					</li>
 				</ul>
@@ -59,18 +58,18 @@ const menuStore = useMenuStore()
 		<template #bottom-header>
 			<div class="flex flex-col gap-y-2">
 				<label>
-					<MoleculeBlockMenu icon="heroicons-solid:sun">
+					<OrganismBlockMenuTooltip icon="heroicons-solid:sun" label="Tema">
 						<div class="flex w-full justify-between flex-1">
 							<span>Modo Claro</span>
 							<AtomSwitch v-model="themeStore.isLight" />
 						</div>
-					</MoleculeBlockMenu>
+					</OrganismBlockMenuTooltip>
 				</label>
 				<label class="sm:block hidden">
-					<MoleculeBlockMenu icon="icomoon-free:menu">
+					<OrganismBlockMenuTooltip icon="icomoon-free:menu" label="Abrir">
 						Menu
 						<input type="checkbox" v-model="menuStore.state" class="hidden">
-					</MoleculeBlockMenu>
+					</OrganismBlockMenuTooltip>
 				</label>
 			</div>
 		</template>
