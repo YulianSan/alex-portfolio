@@ -38,5 +38,10 @@ describe('Hamburger', () => {
 		expect(emitted()).toHaveProperty('update:modelValue')
 		expect(emitted('update:modelValue')?.[0]).toEqual([true])
 		expect(emitted('update:modelValue')?.length).toBe(1)
+
+		fireEvent.click(button)
+
+		expect(emitted('update:modelValue')?.[1]).toEqual([false])
+		expect(emitted('update:modelValue')?.length).toBe(2)
 	})
 })

@@ -3,6 +3,7 @@ import { type Ref, ref } from 'vue'
 import { type ModelValue } from '@/components/Atom/DropImage.vue'
 
 const files: Ref<ModelValue[]> = ref([])
+const test: Ref<string> = ref('')
 
 const removeImage = (index: number) => {
 	files.value.splice(index, 1)
@@ -13,6 +14,7 @@ watch(files, () => {
 })
 </script>
 <template>
+	<AtomInput :model-value="test"></AtomInput>
 	<AtomDropImage v-model="files"> 
 		<template #default="{ isHover }">
 			<div class="w-64 h-64"
